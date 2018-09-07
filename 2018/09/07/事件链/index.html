@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="主要内容这是一篇关于16年发表的日语文本可读性估计的文章，文章思路与结构都很简单，主要介绍了一下三方面的工作，  构建日语可读性语料库 网络上不能断词与断句文本可读性评估 一个实现的简易版的可读性分析器  这篇文章的评估算法很简单，仍然是传统应用于机器学习的语言概率模型，但我觉得之所以他可以发表，在于一个详细的可读性语料库构建思路的详细阐述，而方法只是对这个语料库有效性的验证。 构建日语可读性语料">
+<meta name="description" content="Integrating Order Information and Event Relation for Script Event Prediction事件链​    该篇文章主要是讲的事件的预测，对于一个事件链条如下： ​    作者试图利用LSTM模型来对未知的下一个事件进行预测，同时考虑到不同事件点的时间对结果影响效果不同，因此作者加入attention模型，然后对不同时间点的事件加入权重，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Automatic_Assessment_of_Japanese_Text_Readability">
-<meta property="og:url" content="http://yoursite.com/2018/09/06/Automatic-Assessment-of-Japanese-Text-Readability/index.html">
+<meta property="og:title" content="事件链">
+<meta property="og:url" content="http://yoursite.com/2018/09/07/事件链/index.html">
 <meta property="og:site_name" content="住在金箍棒里的小王子">
-<meta property="og:description" content="主要内容这是一篇关于16年发表的日语文本可读性估计的文章，文章思路与结构都很简单，主要介绍了一下三方面的工作，  构建日语可读性语料库 网络上不能断词与断句文本可读性评估 一个实现的简易版的可读性分析器  这篇文章的评估算法很简单，仍然是传统应用于机器学习的语言概率模型，但我觉得之所以他可以发表，在于一个详细的可读性语料库构建思路的详细阐述，而方法只是对这个语料库有效性的验证。 构建日语可读性语料">
+<meta property="og:description" content="Integrating Order Information and Event Relation for Script Event Prediction事件链​    该篇文章主要是讲的事件的预测，对于一个事件链条如下： ​    作者试图利用LSTM模型来对未知的下一个事件进行预测，同时考虑到不同事件点的时间对结果影响效果不同，因此作者加入attention模型，然后对不同时间点的事件加入权重，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-06T14:24:34.279Z">
+<meta property="og:updated_time" content="2018-09-07T07:34:11.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Automatic_Assessment_of_Japanese_Text_Readability">
-<meta name="twitter:description" content="主要内容这是一篇关于16年发表的日语文本可读性估计的文章，文章思路与结构都很简单，主要介绍了一下三方面的工作，  构建日语可读性语料库 网络上不能断词与断句文本可读性评估 一个实现的简易版的可读性分析器  这篇文章的评估算法很简单，仍然是传统应用于机器学习的语言概率模型，但我觉得之所以他可以发表，在于一个详细的可读性语料库构建思路的详细阐述，而方法只是对这个语料库有效性的验证。 构建日语可读性语料">
+<meta name="twitter:title" content="事件链">
+<meta name="twitter:description" content="Integrating Order Information and Event Relation for Script Event Prediction事件链​    该篇文章主要是讲的事件的预测，对于一个事件链条如下： ​    作者试图利用LSTM模型来对未知的下一个事件进行预测，同时考虑到不同事件点的时间对结果影响效果不同，因此作者加入attention模型，然后对不同时间点的事件加入权重，">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/06/Automatic-Assessment-of-Japanese-Text-Readability/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/07/事件链/"/>
 
 
 
 
 
-  <title>Automatic_Assessment_of_Japanese_Text_Readability | 住在金箍棒里的小王子</title>
+  <title>事件链 | 住在金箍棒里的小王子</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/Automatic-Assessment-of-Japanese-Text-Readability/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/07/事件链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘磊">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Automatic_Assessment_of_Japanese_Text_Readability</h1>
+          <h1 class="post-title" itemprop="name headline">事件链</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-06T21:58:12+08:00">
-                2018-09-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-07T14:51:42+08:00">
+                2018-09-07
               </time>
             
 
@@ -299,20 +299,15 @@
       
 
       
-        <h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><p>这是一篇关于16年发表的日语文本可读性估计的文章，文章思路与结构都很简单，主要介绍了一下三方面的工作，</p>
-<ul>
-<li>构建日语可读性语料库</li>
-<li>网络上不能断词与断句文本可读性评估</li>
-<li>一个实现的简易版的可读性分析器</li>
-</ul>
-<p>这篇文章的评估算法很简单，仍然是传统应用于机器学习的语言概率模型，但我觉得之所以他可以发表，在于一个详细的可读性语料库构建思路的详细阐述，而方法只是对这个语料库有效性的验证。</p>
-<h2 id="构建日语可读性语料库"><a href="#构建日语可读性语料库" class="headerlink" title="构建日语可读性语料库"></a>构建日语可读性语料库</h2><p>分两个步骤：</p>
-<pre><code>1. 搜集除英文之外的全部科目的日语教科书，从小学一年级至高中三年级，由于教科书是由教育局编撰发布的，因此可读性必然与各阶段的学生相适应
-2. 第二步便是利用OCR技术将课本图片识别成文字。作者发现年级低，课文内容长度短，年级高，长度也随之增加。最终经过拼写错误的纠正获取了一千多篇语料。
-3. 除了12个年级的课本对应的12个可读性等级之外，作者考虑更一般的情况，将其他难度在这12个等级之上的文本统统归成第13级，而对应的语料的样本则是来源于名古屋大学和东京大学的大学语文课本。
-</code></pre><p>这个思路和我们之间一直讨论的那个数据搜集思路一样，所以也没什么亮点。</p>
-<h2 id="网络上不能断词与断句文本可读性评估"><a href="#网络上不能断词与断句文本可读性评估" class="headerlink" title="网络上不能断词与断句文本可读性评估"></a>网络上不能断词与断句文本可读性评估</h2><p>作者可能觉得只是简单的创建一个语料库工作量太小了，所以就强行利用在语料库上训练的模型稍微改造一下，去掉传统可读性评估公式中如K_L、lexile模型中句长或者字长等需要断句或者断词的特征，加入一些其他文本特征，然后应用到网络文本的可读性评估上，并以一个儿童节目（Shukan Kodomo News ）网站上的发布的故事帖子作为测试文本进行测试了一下。</p>
-<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>比较简单的一个思路，但对于中文语料的评估有点借鉴意义。</p>
+        <h1 id="Integrating-Order-Information-and-Event-Relation-for-Script-Event-Prediction"><a href="#Integrating-Order-Information-and-Event-Relation-for-Script-Event-Prediction" class="headerlink" title="Integrating Order Information and Event Relation for Script Event Prediction"></a>Integrating Order Information and Event Relation for Script Event Prediction</h1><h2 id="事件链"><a href="#事件链" class="headerlink" title="事件链"></a>事件链</h2><p>​    该篇文章主要是讲的事件的预测，对于一个事件链条如下：</p>
+<p>​    作者试图利用LSTM模型来对未知的下一个事件进行预测，同时考虑到不同事件点的时间对结果影响效果不同，因此作者加入attention模型，然后对不同时间点的事件加入权重，区分不同事件对最终结果的影响。</p>
+<p>​    这种思路可以迁移到篇章流畅度的衡量上，对于一个篇章或者一段文本，其本质上是对一段事件（叙事文）的描述：<strong>在考虑连词的基础上考虑文本的事件，利用这些事件来衡量文本中所呈现的事件的出现的可能性，以该可能性来预测其流畅程度。</strong></p>
+<p>​    这种方法可以直接利用事件链的语料，而不必专门考虑流畅度本身数据的获取。</p>
+<p>​    但是当前论文只考虑了前面事件和最终预测事件之间的关系，没有介绍已知事件之间的关系如何，而且只能在时序的情况下考虑事件流，考虑的事件链的类型太少，而且应用范围有局限，不知道将其改造成篇章流畅度进行分析时效果如何。</p>
+<p>​    此外事件链如何抽取，如何界定有效事件都暂时无法确定。</p>
+<p>​    同样无法衡量的是事件链的类型，比如一个事件链包含订餐、下单、吃饭。但如何判定改事件链的类型是聚类还是约会等。同样在迁移到篇章分析是如何衡量当前的篇章关系是因果还是转折或者其他。</p>
+<p>​    但不管怎样这篇文献提供了一条<strong>站在事件</strong>的角度来分析篇章连贯性的思路，我可以站在事件的角度我可以根据不同的文本类型分布考虑主要成分来刻画篇章流畅度。</p>
+<p>​    之前一直想利用词性以及连接词进行篇章分析的视角较为狭隘。</p>
 
       
     </div>
@@ -337,8 +332,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/31/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/09/06/Automatic-Assessment-of-Japanese-Text-Readability/" rel="next" title="Automatic_Assessment_of_Japanese_Text_Readability">
+                <i class="fa fa-chevron-left"></i> Automatic_Assessment_of_Japanese_Text_Readability
               </a>
             
           </div>
@@ -346,10 +341,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/07/事件链/" rel="prev" title="事件链">
-                事件链 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -463,7 +454,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主要内容"><span class="nav-number">1.</span> <span class="nav-text">主要内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构建日语可读性语料库"><span class="nav-number">1.1.</span> <span class="nav-text">构建日语可读性语料库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络上不能断词与断句文本可读性评估"><span class="nav-number">1.2.</span> <span class="nav-text">网络上不能断词与断句文本可读性评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感想"><span class="nav-number">1.3.</span> <span class="nav-text">感想</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Integrating-Order-Information-and-Event-Relation-for-Script-Event-Prediction"><span class="nav-number">1.</span> <span class="nav-text">Integrating Order Information and Event Relation for Script Event Prediction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件链"><span class="nav-number">1.1.</span> <span class="nav-text">事件链</span></a></li></ol></li></ol></div>
             
 
           </div>
